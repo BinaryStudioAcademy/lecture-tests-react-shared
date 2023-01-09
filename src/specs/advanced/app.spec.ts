@@ -67,7 +67,7 @@ describe('App', async function () {
     await waitForURL(AppRoute.SIGN_IN);
   });
 
-  it('user should see loader during get reuquests', async function () {
+  it('user should see loader while making requests', async function () {
     this.retries(ENV.UNSTABLE_TEST_RETRIES_NUMBER);
 
     await browser.refresh();
