@@ -1,3 +1,3 @@
 export { authData } from './auth-data';
-export { mainData } from './main-data';
+export { searchData } from './search-data';
 export { bookingData } from './booking-data';

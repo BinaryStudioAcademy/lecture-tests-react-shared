@@ -1,6 +1,6 @@
 import { TripList as TripListComponent } from '../../page-components/page-components';
 import { Main as MainActions } from '../../page-actions/page-actions';
-import { mainData } from '../../data/data';
+import { searchData } from '../../data/data';
 
 const tripListComponent = new TripListComponent();
 const mainActions = new MainActions();
@@ -30,7 +30,7 @@ describe('Main Page', async function () {
   });
 
   it('should filter cards by search', async function () {
-    const { search } = mainData;
+    const { search } = searchData;
 
     await mainActions.openPage();
     await mainActions.searchByTitle(search);
@@ -50,7 +50,7 @@ describe('Main Page', async function () {
   });
 
   it('should filter cards by level', async function () {
-    const { level } = mainData;
+    const { level } = searchData;
 
     await mainActions.openPage();
     await mainActions.selectLevel(level);
@@ -67,7 +67,7 @@ describe('Main Page', async function () {
   });
 
   it('should filter cards by duration', async function () {
-    const { duration } = mainData;
+    const { duration } = searchData;
     const [rangeFrom, rangeTo] = duration.split('_x_');
 
     await mainActions.openPage();
@@ -88,7 +88,7 @@ describe('Main Page', async function () {
   });
 
   it('should apply multiple filters at the same time', async function () {
-    const { search, level } = mainData;
+    const { search, level } = searchData;
 
     await mainActions.openPage();
     await mainActions.searchByTitle(search);
@@ -117,7 +117,7 @@ describe('Main Page', async function () {
   });
 
   it('should handle filters reset', async function () {
-    const { level, levelNotSet } = mainData;
+    const { level, levelNotSet } = searchData;
 
     await mainActions.openPage();
     const tripItemsCount = await tripListComponent.Trips.length;
