@@ -1,4 +1,4 @@
-import type { Options } from '@wdio/types';
+import { Options } from '@wdio/types';
 import dotenv from 'dotenv';
 
 dotenv.config();

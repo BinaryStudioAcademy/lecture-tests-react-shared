@@ -4,7 +4,7 @@
 
 This repository contains tests for "React. Advanced" and "React. Base" lectures.
 
-**Note:** Some functionality require asynchronous logic (React. Advanced lecture) and may fail on the first try. To account for this, there is a retries for unstable tests. However tests report will display all tries as separate test cases. To determine if all tests have passed, pay attention to the final summary line, which takes into account tests' retries and will indicate whether all tests have passed. You can set number of retries for unstable tests in ENV.
+**Note:** Some functionality require async logic ("React. Advanced" lecture) and may fail on the first try. To account for this, there is a retries for unstable tests. However tests report will display all tries as separate test cases. To determine if all tests have passed, pay attention to the final summary line, which takes into account tests' retries and will indicate whether all tests have passed. You can set number of retries for unstable tests in ENV.
 
 ## Requirements
 
