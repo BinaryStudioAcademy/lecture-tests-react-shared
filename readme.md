@@ -8,7 +8,7 @@ This repository contains tests for "React. Advanced" and "React. Base" lectures.
 
 ## Requirements
 
-- [NodeJS](https://nodejs.org/en/) (16.x.x);
+- [NodeJS](https://nodejs.org/en/) (20.x.x);
 - [NPM](https://www.npmjs.com/) (8.x.x);
 - [ChromeDriver](https://chromedriver.storage.googleapis.com/) (108)
 
