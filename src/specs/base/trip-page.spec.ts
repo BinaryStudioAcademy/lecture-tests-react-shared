@@ -60,11 +60,11 @@ describe('Trip Page', async function () {
 
     await tripActions.fillBookTripForm({ date, guests: guestsMin });
     const priceString = await bookTripModalComponent.Price_Content.getText();
-    const price = parseFloat(priceString);
+    const price = parseInt(priceString.replace(/\D/g, ''));
 
     await tripActions.fillBookTripForm({ date, guests });
     const newPriceString = await bookTripModalComponent.Price_Content.getText();
-    const newPrice = parseFloat(newPriceString);
+    const newPrice = parseInt(newPriceString.replace(/\D/g, ''));
 
     expect(newPrice).toEqual((price / guestsMin) * guests);
   });

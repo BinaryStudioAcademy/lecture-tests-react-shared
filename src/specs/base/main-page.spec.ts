@@ -49,6 +49,27 @@ describe('Main Page', async function () {
     expect(titles.length).toEqual(filteredTitles.length);
   });
 
+  it('should filter cards by search case insensitive', async function () {
+    const { searchLowerCase } = searchData;
+    const searchRegExp = new RegExp(searchLowerCase, 'i');
+
+    await mainActions.openPage();
+    await mainActions.searchByTitle(searchLowerCase);
+    const tripItemsCount = await tripListComponent.Trips.length;
+
+    const titles = await Promise.all(
+      Array.from(new Array(tripItemsCount)).map((_e, i) => {
+        return tripListComponent.getTitleContentForItem(i).getText();
+      }),
+    );
+
+    const filteredTitles = titles.filter(
+      (title) => title.search(searchRegExp) !== -1,
+    );
+
+    expect(titles.length).toEqual(filteredTitles.length);
+  });
+
   it('should filter cards by level', async function () {
     const { level } = searchData;
 
